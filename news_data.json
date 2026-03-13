@@ -1,0 +1,23 @@
+{
+      "Technology": [
+                {
+                              "title": "Quantum Computing and AI Integration",
+                              "link": "https://news.google.com/rss/articles/...",
+                              "published": "Tue, 10 Mar 2026 08:25:56 GMT"
+                }
+      ],
+      "AI": [
+                {
+                              "title": "Latest AI Breakthroughs",
+                              "link": "https://news.google.com/rss/articles/...",
+                              "published": "Thu, 12 Mar 2026 10:00:00 GMT"
+                }
+      ],
+      "World": [
+                {
+                              "title": "Global Strategic Update",
+                              "link": "https://news.google.com/rss/articles/...",
+                              "published": "Fri, 13 Mar 2026 09:00:00 GMT"
+                }
+      ]
+}
