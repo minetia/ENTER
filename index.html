@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+  <html lang="ko">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>IMPERIAL DAILY | ENTER</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nanum+Myeongjo:wght@400;700;800&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+      <style>
+          body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-serif; }
+        .imperial-gold { color: #fbbf24; }
+                  .news-title { font-family: 'Playfair Display', serif; }
+        .news-content { font-family: 'Nanum Myeongjo', serif; }
+    </style>
+          </head>
+          <body class="p-8">
+              <div class="max-w-6xl mx-auto border-4 border-yellow-600 p-8 shadow-2xl bg-slate-900">
+                  <header class="text-center border-b-2 border-yellow-800 pb-8 mb-8">
+                      <h1 class="text-6xl news-title imperial-gold font-black tracking-tighter mb-4">IMPERIAL DAILY</h1>
+                      <p class="text-xl font-light italic text-slate-400">Serving the Phoenix Empire since 2026</p>
+          </header>
+          <div id="news-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          </div>
+      </div>
+      <script>
+          fetch('news_data.json')
+              .then(response => response.json())
+              .then(data => {
+                  const container = document.getElementById('news-container');
+                for (const category in data) {
+                                      const section = document.createElement('div');
+                    section.innerHTML = `<h2 class="text-2xl imperial-gold font-bold mb-4 border-b border-yellow-900 pb-2">${category}</h2>`;
+                    data[category].forEach(item => {
+                                              const article = document.createElement('div');
+                        article.innerHTML = `<h3 class="text-lg font-bold hover:imperial-gold transition-colors"><a href="${item.link}">${item.title}</a></h3><p class="text-xs text-slate-500 mt-1">${item.published}</p>`;
+                        section.appendChild(article);
+});
+                    container.appendChild(section);
+}
+});
+    </script>
+      </body>
+      </html>
